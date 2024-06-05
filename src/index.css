@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.bannerImage {
+  background-image: url("./assets/banner.jpg");
+}
+
+.bannerImage2 {
+  background-image: url("./assets/banner2.jpg");
+}
+
+.bannerImage {
+  background-image: url("./assets/banner.jpg");
+}
+
+.bannerImage {
+  background-image: url("./assets/banner.jpg");
+}

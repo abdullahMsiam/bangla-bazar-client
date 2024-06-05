@@ -6,7 +6,11 @@ export default
       "./src/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-      extend: {}
+      extend: {
+        backgroundImage: {
+          'small-component': "url('/src/assets/delivery.jpg')",
+        },
+      }
     },
     plugins: [require('daisyui')]
   }
