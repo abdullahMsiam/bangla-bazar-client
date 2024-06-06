@@ -1,8 +1,7 @@
-import useAuth from "../hooks/useAuth";
+import GoogleLogin from "../components/login-register/GoogleLogin";
+
 
 const Login = () => {
-
-    const { googleLogin } = useAuth();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -13,9 +12,7 @@ const Login = () => {
 
         console.log(email, password);
     }
-    const handleGoogleLogin = () => {
-        googleLogin();
-    }
+
     return (
         <div>
             <div className="hero min-h-screen bg-red-300 bg-opacity-50">
@@ -42,8 +39,8 @@ const Login = () => {
                                 <input type="submit" className="btn bg-red-600 text-white w-11/12 mt-4" value="Register" />
                             </div>
                         </form>
-                        <div onClick={handleGoogleLogin} className="card-body flex justify-center items-center -mt-8">
-                            <input type="submit" className="btn bg-red-600 text-white w-11/12" value="Google" />
+                        <div className=" flex justify-center items-center -mt-4">
+                            <GoogleLogin />
                         </div>
                     </div>
                 </div>

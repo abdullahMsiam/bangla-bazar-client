@@ -1,3 +1,4 @@
+import GoogleLogin from "../components/login-register/GoogleLogin";
 
 const Register = () => {
 
@@ -42,8 +43,8 @@ const Register = () => {
                                 <input type="submit" className="btn bg-red-600 text-white w-11/12 mt-4" value="Register" />
                             </div>
                         </form>
-                        <div className="card-body flex justify-center items-center -mt-8">
-                            <input type="submit" className="btn bg-red-600 text-white w-11/12" value="Google" />
+                        <div className="flex justify-center items-center -mt-4">
+                            <GoogleLogin />
                         </div>
                     </div>
                 </div>
