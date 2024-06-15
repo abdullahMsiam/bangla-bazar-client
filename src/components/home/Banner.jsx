@@ -32,7 +32,7 @@ const Banner = () => {
                         <div className=" bg-opacity-40"></div>
                         <div className="hero-content text-left md:max-w-[600px] ">
                             <div className="bg-gray-200 text-green-600 rounded-lg p-6 bg-opacity-50">
-                                <h1 className="mb-5 text-5xl font-bold">Awesome 5%</h1>
+                                <h1 className="mb-5 text-5xl font-bold">Awesome 7%</h1>
                                 <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                                 <button className="btn btn-primary">Get Started</button>
                             </div>
@@ -44,7 +44,7 @@ const Banner = () => {
                         <div className=" bg-opacity-40"></div>
                         <div className="hero-content text-left md:max-w-[600px] ">
                             <div className="bg-gray-200 text-green-600 rounded-lg p-6 bg-opacity-50">
-                                <h1 className="mb-5 text-5xl font-bold">Awesome 5%</h1>
+                                <h1 className="mb-5 text-5xl font-bold">Awesome 6%</h1>
                                 <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                                 <button className="btn btn-primary">Get Started</button>
                             </div>
@@ -54,7 +54,7 @@ const Banner = () => {
             </div>
             <div className="flex justify-center w-full py-2 gap-2">
                 <a href="#item1" className="btn btn-xs">1</a>
-                <a href="#item2" className="btn btn-xs">2</a>
+                <a href="#item1" className="btn btn-xs">2</a>
                 <a href="#item3" className="btn btn-xs">3</a>
                 <a href="#item4" className="btn btn-xs">4</a>
             </div>

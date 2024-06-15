@@ -42,15 +42,25 @@ const Navbar = () => {
                     <div>
                         {
                             user ?
-                                <div className="flex justify-center items-center gap-2">
-                                    <div>
+                                <ul className="menu menu-horizontal justify-center items-center ">
+                                    <li className="hidden md:block">
                                         <Tooltip text={user.displayName}>
                                             <img className="rounded-full w-10 border border-green-700 tooltip" src={user.photoURL} alt="" />
                                         </Tooltip>
 
-                                    </div>
-                                    <button onClick={() => handleLogout()} className="btn btn-outline bg-red-600 rounded-badge font-bold">Logout</button>
-                                </div> : <div>
+                                    </li>
+                                    <li>
+                                        <details>
+                                            <summary>
+                                                My Account
+                                            </summary>
+                                            <ul>
+                                                <button onClick={() => handleLogout()} className="btn btn-sm btn-outline bg-red-600 rounded-badge font-bold">Logout</button>
+                                            </ul>
+                                        </details>
+                                    </li>
+
+                                </ul> : <div>
                                     <Link to={"/login"}>
                                         <button className="btn btn-outline bg-green-500 rounded-badge font-bold">Login </button>
                                     </Link> or
