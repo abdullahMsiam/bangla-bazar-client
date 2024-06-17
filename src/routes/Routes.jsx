@@ -8,6 +8,8 @@ import Register from "../pages/Register";
 import DashboardLayout from "../layouts/DashboardLayout";
 import Dashboard from "../pages/dashboard/Dashboard";
 import DashProducts from "../pages/dashboard/DashProducts";
+import PrivateRoute from "./private/PrivateRoute";
+import EditProfile from "../pages/dashboard/EditProfile";
 
 
 const router = createBrowserRouter([
@@ -31,16 +33,23 @@ const router = createBrowserRouter([
     },
     {
         path: "/dashboard",
-        element: <DashboardLayout />,
+        element: <PrivateRoute> <DashboardLayout /> </PrivateRoute>,
         children: [
             {
-                path: "home",
-                element: <Dashboard />
+                path: "profile/:email",
+                element: <PrivateRoute> <Dashboard /> </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:3000/user/${params.email}`)
             },
             {
                 path: "all-products",
-                element: <DashProducts />
-            }
+                element: <PrivateRoute> <DashProducts /> </PrivateRoute>
+            },
+            {
+                path: "profile/edit/:id",
+                element: <PrivateRoute> <EditProfile /> </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:3000/user/get/${params.id}`)
+
+            },
         ]
     }
 ]);

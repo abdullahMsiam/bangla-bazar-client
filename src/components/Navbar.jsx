@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import Tooltip from "./Tooltip";
 import BanglaBazar from "./BanglaBazar";
+import { FaCircleUser } from "react-icons/fa6";
+import { FaSignOutAlt } from "react-icons/fa";
 
 const Navbar = () => {
 
@@ -12,6 +14,9 @@ const Navbar = () => {
             <li className="font-bold"> <Link to={"/about"}>About</Link> </li>
             <li className="font-bold"> <Link to={"/about"}>Contact Us</Link> </li>
             <li className="font-bold"> <Link to={"/about"}>Shopping</Link> </li>
+            {user ?
+                <li className="font-bold"> <Link to={`/dashboard/profile/${user?.email}`}>Dashboard</Link> </li> : <></>
+            }
 
         </>
     );
@@ -21,7 +26,7 @@ const Navbar = () => {
     }
     return (
         <div>
-            <div className="navbar bg-green-200 bg-opacity-80 fixed top-0 z-20 ">
+            <div className="navbar bg-green-200 bg-opacity-80 fixed top-0 z-20 h-12 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -45,7 +50,8 @@ const Navbar = () => {
                                 <ul className="menu menu-horizontal justify-center items-center ">
                                     <li className="hidden md:block">
                                         <Tooltip text={user.displayName}>
-                                            <img className="rounded-full w-10 border border-green-700 tooltip" src={user.photoURL} alt="" />
+                                            {user?.photoURL ? <img className="rounded-full w-10 border border-green-700 tooltip" src={user?.photoURL} alt="" /> :
+                                                <FaCircleUser className="text-2xl" />}
                                         </Tooltip>
 
                                     </li>
@@ -54,18 +60,29 @@ const Navbar = () => {
                                             <summary>
                                                 My Account
                                             </summary>
-                                            <ul>
-                                                <button onClick={() => handleLogout()} className="btn btn-sm btn-outline bg-red-600 rounded-badge font-bold">Logout</button>
+                                            <ul className="w-32 text-center h-[150px] flex flex-col  items-center bg-opacity-70">
+                                                <li className="text-xl">
+                                                    Hi, {user?.displayName.split(" ", 1)}
+                                                </li>
+                                                <li>
+                                                    <button className=" mt-4 btn btn-success btn-sm">
+                                                        <Link to={`/dashboard/profile/${user?.email}`}> View Profile</Link>
+                                                    </button>
+                                                </li>
+
+                                                <li>
+                                                    <button onClick={() => handleLogout()} className=" w-full mt-4 btn btn-error btn-sm bg-red-600  font-bold">Logout <FaSignOutAlt /> </button>
+                                                </li>
                                             </ul>
                                         </details>
                                     </li>
 
-                                </ul> : <div>
+                                </ul> : <div className="flex">
                                     <Link to={"/login"}>
-                                        <button className="btn btn-outline bg-green-500 rounded-badge font-bold">Login </button>
-                                    </Link> or
+                                        <button className="btn btn-outline btn-sm bg-green-500 rounded-badge font-bold">Login </button>
+                                    </Link>
                                     <Link to={"/register"}>
-                                        <button className="ms-1 btn btn-outline bg-yellow-500 rounded-badge font-bold">Sign Up</button>
+                                        <button className="ms-1 btn btn-outline btn-sm bg-yellow-500 rounded-badge font-bold">Sign Up</button>
                                     </Link>
                                 </div>
                         }
