@@ -7,7 +7,7 @@ const Dashboard = () => {
     const [data, setData] = useState();
 
     useEffect(() => {
-        fetch('http://localhost:3000/products')
+        fetch('https://bangla-bazar-server.onrender.com/products')
             .then(res => res.json())
             .then(data => setData(data));
     }, [])

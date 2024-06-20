@@ -7,7 +7,7 @@ const DashProducts = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:3000/products')
+        fetch('https://bangla-bazar-server.onrender.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -17,7 +17,7 @@ const DashProducts = () => {
         const proceed = confirm('Are you sure to delete');
 
         if (proceed) {
-            fetch(`http://localhost:3000/products/${id}`, {
+            fetch(`https://bangla-bazar-server.onrender.com/products/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

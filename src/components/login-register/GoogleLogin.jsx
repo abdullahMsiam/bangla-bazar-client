@@ -13,7 +13,7 @@ const GoogleLogin = () => {
                     email: data?.user?.email,
                     name: data?.user?.displayName
                 };
-                fetch('http://localhost:3000/user', {
+                fetch('https://bangla-bazar-server.onrender.com/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

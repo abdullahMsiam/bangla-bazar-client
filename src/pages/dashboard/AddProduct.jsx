@@ -16,7 +16,7 @@ const AddProduct = () => {
         const product = { name, price, stock, discount, rating, image_url, }
 
 
-        fetch('http://localhost:3000/products', {
+        fetch('https://bangla-bazar-server.onrender.com/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

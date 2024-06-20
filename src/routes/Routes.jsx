@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             {
                 path: "/regular-products/:id",
                 element: <PrivateRoute> <ProductDetails /> </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://bangla-bazar-server.onrender.com/products/${params.id}`)
             },
         ]
     },
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
             {
                 path: "all-products/update/:id",
                 element: <PrivateRoute> <UpdateProduct /> </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://bangla-bazar-server.onrender.com/products/${params.id}`)
 
             },
             {
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
             {
                 path: "edit/:id",
                 element: <PrivateRoute> <EditProfile /> </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/user/get/${params.id}`)
+                loader: ({ params }) => fetch(`https://bangla-bazar-server.onrender.com/user/get/${params.id}`)
 
             },
         ]

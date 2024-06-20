@@ -19,7 +19,7 @@ const UpdateProduct = () => {
 
         const product = { name, price, stock, discount, rating, image_url, }
 
-        fetch(`http://localhost:3000/products/${data?._id}`, {
+        fetch(`https://bangla-bazar-server.onrender.com/products/${data?._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

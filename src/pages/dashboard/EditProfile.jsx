@@ -14,7 +14,7 @@ const EditProfile = () => {
 
         const userData = { name, email: data?.email, age, mobile };
 
-        fetch(`http://localhost:3000/user/${data?.email}`, {
+        fetch(`https://bangla-bazar-server.onrender.com/user/${data?.email}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

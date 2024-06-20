@@ -12,7 +12,7 @@ const Profile = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:3000/user/${user.email}`, {
+        fetch(`https://bangla-bazar-server.onrender.com/user/${user.email}`, {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('bangla-bazar-token')}`
@@ -23,15 +23,7 @@ const Profile = () => {
                 setData(data);
             })
 
-        // const fetchData = async () => {
-        //     try {
-        //         const res = await fetch(`http://localhost:3000/user/${user.email}`);
-        //         const result = await res.json();
-        //         setData(result);
-        //     } catch (err) {
-        //         console.error('can not fetch data', err)
-        //     }
-        // } ; fetchData();
+
 
 
     }, [])

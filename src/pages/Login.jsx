@@ -19,7 +19,7 @@ const Login = () => {
                     email: user?.email,
                 }
 
-                fetch('http://localhost:3000/jwt', {
+                fetch('https://bangla-bazar-server.onrender.com/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
