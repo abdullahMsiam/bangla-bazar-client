@@ -11,9 +11,9 @@ const Navbar = () => {
 
     const navMenu = (
         <>
-            <li className="font-bold"> <Link to={"/about"}>About</Link> </li>
+            <li className="font-bold"> <Link to={"/about-us"}>About</Link> </li>
             <li className="font-bold"> <Link to={"/about"}>Contact Us</Link> </li>
-            <li className="font-bold"> <Link to={"/about"}>Shopping</Link> </li>
+            <li className="font-bold"> <Link to={"/regular-products"}>Shopping</Link> </li>
             {user ?
                 <li className="font-bold"> <Link to={`dashboard`}>Dashboard</Link> </li> : <></>
             }

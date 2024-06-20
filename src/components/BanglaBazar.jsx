@@ -6,7 +6,7 @@ const BanglaBazar = () => {
         <div>
 
             <Link to={"/"}>
-                <h1 className="font-mono ms-2 btn btn-outline font-bold bg-red-500 text-white py-4 shadow-black shadow-lg px-2 rounded-xl flex h-10 "> BangleBZ <FcApproval /> </h1></Link>
+                <h1 className="font-mono ms-2 btn btn-outline w-full bg-red-500 text-white py-2 shadow-black shadow-lg rounded-lg flex h-10 "> BanglaBZ <FcApproval /> </h1></Link>
 
         </div>
     );

@@ -18,7 +18,6 @@ const Login = () => {
                 const loggedUser = {
                     email: user?.email,
                 }
-                console.log(loggedUser);
 
                 fetch('http://localhost:3000/jwt', {
                     method: 'POST',
@@ -27,7 +26,7 @@ const Login = () => {
                     },
                     body: JSON.stringify(loggedUser)
                 }).then(res => res.json()).then(data => {
-                    console.log('jwt info', data)
+
                     localStorage.setItem('bangla-bazar-token', data?.token);
                 })
             });

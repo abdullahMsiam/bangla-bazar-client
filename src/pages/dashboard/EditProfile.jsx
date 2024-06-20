@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router-dom";
 const EditProfile = () => {
 
     const data = useLoaderData();
-    console.log(data);
 
     const handleSubmit = (e) => {
         e.preventDefault();

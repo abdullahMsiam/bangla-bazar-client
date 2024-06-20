@@ -1,3 +1,5 @@
+import { FaUserCircle } from 'react-icons/fa';
+import { FcHome, FcRules, FcTodoList } from 'react-icons/fc';
 import { Link, Outlet } from 'react-router-dom';
 // import useAuth from '../hooks/useAuth';
 
@@ -6,10 +8,10 @@ const DashboardLayout = () => {
 
     const navmenu = (
         <>
-            <li> <Link to={"/"}>Home Page</Link> </li>
-            <li> <Link to={"profile"}>Profile</Link> </li>
-            <li> <Link to={"all-products"}>All products</Link> </li>
-            <li><a>Navbar Item 2</a></li>
+            <li className='btn btn-xs btn-outline btn-success mt-2 ms-2'> <Link to={"/"}><FcHome />Home Page  </Link> </li>
+            <li className='btn btn-xs btn-outline btn-success mt-2 ms-2'> <Link to={"profile"}> <FaUserCircle />Profile </Link> </li>
+            <li className='btn btn-xs btn-outline btn-success mt-2 ms-2'> <Link to={"all-products"}><FcRules />All products  </Link> </li>
+            <li className='btn btn-xs btn-outline btn-success mt-2 ms-2'> <Link to={"all-products/add-product"}><FcTodoList />Add product  </Link> </li>
         </>
     )
     return (
@@ -24,7 +26,7 @@ const DashboardLayout = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                             </label>
                         </div>
-                        <div className="flex px-2 mx-2"> <Link to={`dashboard/`}>Profile</Link> </div>
+                        <div className="btn btn-sm btn-outline btn-error flex px-2 mx-2 font-bold"> <Link to={``}>Dashboard</Link> </div>
                         <div className="flex-none hidden lg:block mx-auto">
                             <ul className="menu menu-horizontal">
                                 {/* Navbar menu content here */}
@@ -37,7 +39,7 @@ const DashboardLayout = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 min-h-full bg-base-200">
+                    <ul className="menu p-4 w-44 min-h-full bg-green-50">
                         {/* Sidebar content here */}
                         {navmenu}
                     </ul>

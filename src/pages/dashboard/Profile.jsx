@@ -8,7 +8,6 @@ const Profile = () => {
 
     const auth = useContext(AuthContext);
     const { user } = auth;
-    console.log(data, user, auth.user);
 
 
     useEffect(() => {

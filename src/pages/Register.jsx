@@ -14,7 +14,7 @@ const Register = () => {
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
 
-        console.log(email, password);
+
 
         if (password === confirmPassword) {
             createUser(email, password).then((data) => {

@@ -11,6 +11,11 @@ import DashProducts from "../pages/dashboard/DashProducts";
 import PrivateRoute from "./private/PrivateRoute";
 import EditProfile from "../pages/dashboard/EditProfile";
 import Profile from "../pages/dashboard/Profile";
+import UpdateProduct from "../pages/dashboard/UpdateProduct";
+import AddProduct from "../pages/dashboard/AddProduct";
+import RegularProducts from "../pages/client-pages/RegularProducts";
+import ProductDetails from "../pages/client-pages/ProductDetails";
+import AboutUs from "../pages/client-pages/AboutUs";
 
 
 const router = createBrowserRouter([
@@ -29,7 +34,20 @@ const router = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register />
-            }
+            },
+            {
+                path: "/about-us",
+                element: <AboutUs />
+            },
+            {
+                path: "/regular-products",
+                element: <PrivateRoute> <RegularProducts /> </PrivateRoute>,
+            },
+            {
+                path: "/regular-products/:id",
+                element: <PrivateRoute> <ProductDetails /> </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:3000/products/${params.id}`)
+            },
         ]
     },
     {
@@ -47,6 +65,17 @@ const router = createBrowserRouter([
             {
                 path: "all-products",
                 element: <PrivateRoute> <DashProducts /> </PrivateRoute>
+            },
+            {
+                path: "all-products/update/:id",
+                element: <PrivateRoute> <UpdateProduct /> </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:3000/products/${params.id}`)
+
+            },
+            {
+                path: "all-products/add-product",
+                element: <PrivateRoute> <AddProduct /> </PrivateRoute>,
+
             },
             {
                 path: "edit/:id",
