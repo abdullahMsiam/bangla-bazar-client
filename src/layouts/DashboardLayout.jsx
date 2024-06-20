@@ -1,12 +1,13 @@
 import { Link, Outlet } from 'react-router-dom';
-import useAuth from '../hooks/useAuth';
+// import useAuth from '../hooks/useAuth';
 
 const DashboardLayout = () => {
-    const { user } = useAuth();
+    // const { user } = useAuth();
 
     const navmenu = (
         <>
             <li> <Link to={"/"}>Home Page</Link> </li>
+            <li> <Link to={"profile"}>Profile</Link> </li>
             <li> <Link to={"all-products"}>All products</Link> </li>
             <li><a>Navbar Item 2</a></li>
         </>
@@ -23,7 +24,7 @@ const DashboardLayout = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                             </label>
                         </div>
-                        <div className="flex px-2 mx-2"> <Link to={`profile/${user?.email}`}>Profile</Link> </div>
+                        <div className="flex px-2 mx-2"> <Link to={`dashboard/`}>Profile</Link> </div>
                         <div className="flex-none hidden lg:block mx-auto">
                             <ul className="menu menu-horizontal">
                                 {/* Navbar menu content here */}

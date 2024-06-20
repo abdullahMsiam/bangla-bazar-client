@@ -10,6 +10,7 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import DashProducts from "../pages/dashboard/DashProducts";
 import PrivateRoute from "./private/PrivateRoute";
 import EditProfile from "../pages/dashboard/EditProfile";
+import Profile from "../pages/dashboard/Profile";
 
 
 const router = createBrowserRouter([
@@ -36,16 +37,19 @@ const router = createBrowserRouter([
         element: <PrivateRoute> <DashboardLayout /> </PrivateRoute>,
         children: [
             {
-                path: "profile/:email",
+                path: "",
                 element: <PrivateRoute> <Dashboard /> </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/user/${params.email}`)
+            },
+            {
+                path: "profile",
+                element: <PrivateRoute> <Profile /> </PrivateRoute>,
             },
             {
                 path: "all-products",
                 element: <PrivateRoute> <DashProducts /> </PrivateRoute>
             },
             {
-                path: "profile/edit/:id",
+                path: "edit/:id",
                 element: <PrivateRoute> <EditProfile /> </PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:3000/user/get/${params.id}`)
 

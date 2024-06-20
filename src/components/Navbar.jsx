@@ -15,14 +15,16 @@ const Navbar = () => {
             <li className="font-bold"> <Link to={"/about"}>Contact Us</Link> </li>
             <li className="font-bold"> <Link to={"/about"}>Shopping</Link> </li>
             {user ?
-                <li className="font-bold"> <Link to={`/dashboard/profile/${user?.email}`}>Dashboard</Link> </li> : <></>
+                <li className="font-bold"> <Link to={`dashboard`}>Dashboard</Link> </li> : <></>
             }
 
         </>
     );
 
     const handleLogout = () => {
-        logout();
+        logout().then(() => {
+            localStorage.removeItem('bangla-bazar-token');
+        });
     }
     return (
         <div>
@@ -62,11 +64,11 @@ const Navbar = () => {
                                             </summary>
                                             <ul className="w-32 text-center h-[150px] flex flex-col  items-center bg-opacity-70">
                                                 <li className="text-xl">
-                                                    Hi, {user?.displayName.split(" ", 1)}
+                                                    Hi
                                                 </li>
                                                 <li>
                                                     <button className=" mt-4 btn btn-success btn-sm">
-                                                        <Link to={`/dashboard/profile/${user?.email}`}> View Profile</Link>
+                                                        <Link to={`dashboard/profile`}> View Profile</Link>
                                                     </button>
                                                 </li>
 
