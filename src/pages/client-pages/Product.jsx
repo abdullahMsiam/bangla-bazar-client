@@ -15,7 +15,7 @@ const Product = ({ product }) => {
                 <img className="w-24" src={image_url} alt="" />
                 <h2 className="font-semibold text-red-600">${price}</h2>
                 <p>{name}</p>
-                <p className="text-green-600 font-semibold">Stock available {stock}</p>
+                <p className="text-green-600 font-semibold">Stock available {stock > 0 ? stock : 0}</p>
                 <p>Rating- {rating} </p>
                 <div className='flex gap-1'>
                     <Link to={`regular-products/${_id}`}><button className=" mt-2  btn btn-xs btn-warning"> Details </button></Link>

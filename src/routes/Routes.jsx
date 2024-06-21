@@ -16,12 +16,14 @@ import AddProduct from "../pages/dashboard/AddProduct";
 import RegularProducts from "../pages/client-pages/RegularProducts";
 import ProductDetails from "../pages/client-pages/ProductDetails";
 import AboutUs from "../pages/client-pages/AboutUs";
+import ErrorPage from "../components/login-register/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "/",
@@ -53,6 +55,7 @@ const router = createBrowserRouter([
     {
         path: "/dashboard",
         element: <PrivateRoute> <DashboardLayout /> </PrivateRoute>,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "",
